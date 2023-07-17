@@ -5,7 +5,9 @@ const dbConnection = require("./db");
 const userRoute = require("./routes/userRoute");
 const postRoute = require("./routes/postRoute");
 app.use(express.json())
-app.use(cors())
+app.use(cors({
+    origin: "http://localhost:3000"
+}))
 app.use("/users",userRoute)
 app.use("/posts",postRoute)
 
